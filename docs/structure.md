@@ -1,51 +1,51 @@
 # Структура приложения
 ## Компоненты приложения
-## Классовая структура Зоопарка
+## Классовая структура Фабрики
   1. СControlBlock
-      - employees: Array<CEmployee>;
-      - equipments: Array<CEquipment>;
-      - installations: Array<CInstallation>;
+      - employees: Array\<CEmployee\>;
+      - equipments: Array\<CEquipment\>;
+      - installations: Array\<CInstallation\>;
       - financialBlock: CFinancialBlock;
       - scienceBlock: CScienceBlock;
       - cyberBlock: CCyberBlock;
       - director: string;
-      - securityReports: Array<ISecurityReport>;
-      - fabricPlan: Array<string>;
+      - securityReports: Array\<ISecurityReport\>;
+      - fabricPlan: Array\<string\>;
       - fabricDirection: string;
-      - fabricInvestigations: Array<IInvestigations>;
+      - fabricInvestigations: Array\<IInvestigations\>;
       - #checkFinance(): void;
       - getFullFabricInfo(): void;
       - #checkEmployee(): void;
       - #checkDetals(): void;
       - #checkProduct(): void;
-      - #createPlanOfSecurityCheckReport(): Array<ISecurityReport>;
+      - #createPlanOfSecurityCheckReport(): Array\<ISecurityReport\>;
       - checkFabricBlocks(): void;
       1. CFinancialBlock
-          - employees: Array<CEmployee>;
-          - equipments: Array<CEquipment>;
-          - installations: Array<CInstallation>;
+          - employees: Array\<CEmployee\>;
+          - equipments: Array\<CEquipment\>;
+          - installations: Array\<CInstallation\>;
           - budget: number;
-          - financialReports: Array<number>;
+          - financialReports: Array\<number\>;
           - moneyInBank: number;
           - debtClients: number;
           - dedtFabric: number;
           - preCalculationOfPrice(): number;
-          - calculationOfFinancialYear(price: number, financialReports: Array<IFinancialReport>): Array<IFinancialReport;
+          - calculationOfFinancialYear(price: number, financialReports: Array\<IFinancialReport>): Array\<IFinancialReport;
           - checkBudget(): void;
           - createFinancialReport(data): IFinancialReport;
       2.CScienceBlock
-          - employees: Array<CEmployee>;
-          - equipments: Array<CEquipment>;
-          - installations: Array<CInstallation>;
-          - investigations: Array<IInvestigations>;
+          - employees: Array\<CEmployee\>;
+          - equipments: Array\<CEquipment\>;
+          - installations: Array\<CInstallation\>;
+          - investigations: Array\<IInvestigations\>;
           - createInvestigation(data: IInvestigations): void;
           - updateInvestigation(data: IInvestigations, index: number): void;
           - removeInvestigation(index: number): void;
       3. CCyberBlock
-          - employees: Array<CEmployee>;
-          - equipments: Array<CEquipment>;
-          - installations: Array<CInstallation>;
-          - cyberSecurityReports: Array<ISecurityReport>;
+          - employees: Array\<CEmployee\>;
+          - equipments: Array\<CEquipment\>;
+          - installations: Array\<CInstallation\>;
+          - cyberSecurityReports: Array\<ISecurityReport\>;
           - createCyberSecurityReports(data: ISecurityReport): void;
           - updateCyberSecurityReports(data: ISecurityReport, index: number): void;
           - removeCyberSecurityReports(index: number): void;
@@ -55,7 +55,7 @@
       - experience: string;
       - sex: string;
       - oklad: number;
-      - equipments: Array<CEquipment>;
+      - equipments: Array\<CEquipment\>;
       - age: number;
       - isWorkingNow: boolean;
       - checkYourEquipment(): void;
@@ -72,9 +72,9 @@
   4. CInstallation extends CEquipment
       - useEquipment(): void;
   5. CNodes
-      - employees: Array<CEmployee>;
-      - equipments: Array<CEquipment>;
-      - installations: Array<CInstallation>;
+      - employees: Array\<CEmployee\>;
+      - equipments: Array\<CEquipment\>;
+      - installations: Array\<CInstallation\>;
       - createLada(data: СStandartAutoComplectation): CLadaType;
       - createGaz(СStandartAutoComplectation): CGAZType;
       - createKamaz(СStandartAutoComplectation): CKamazType;
@@ -138,7 +138,7 @@
           - vehicleEquipment: string;
           - hasAirConditioner: boolean;
           - hasMusicDevice: boolean;
-          - seat: Array<ISeat>;
+          - seat: Array\<ISeat\>;
       9. СComponents extends СModel
           - body: СBody;
           - frame: СFrame;
@@ -156,8 +156,8 @@
           - isDoorLocked: boolean;
           - isGabageLocked: boolem;
           - isSignaling; boolean;
-          - lightStatus: Array<string>;
-          - windows: Array<string>;
+          - lightStatus: Array\<string\>;
+          - windows: Array\<string\>;
           - direction: string;
           - run(): void;
           - stop(): void;
@@ -183,8 +183,8 @@
           - isDoorLocked: boolean;
           - isGabageLocked: boolem;
           - isSignaling; boolean;
-          - lightStatus: Array<string>;
-          - windows: Array<string>;
+          - lightStatus: Array\<string\>;
+          - windows: Array\<string\>;
           - direction: string;
           - components: {
               - body: {
@@ -242,7 +242,7 @@
                 vehicleEquipment: string;
                 hasAirConditioner: boolean;
                 hasMusicDevice: boolean;
-                seat: Array<ISeat>;
+                seat: Array\<ISeat\>;
               };
               - model: {
                   - material: string;
@@ -256,9 +256,9 @@
               }
           }
   6. CInstrumentalNode
-      - employees: Array<CEmployee>;
-      - equipments: Array<CEquipment>;
-      - installations: Array<CInstallation>;
+      - employees: Array\<CEmployee\>;
+      - equipments: Array\<CEquipment\>;
+      - installations: Array\<CInstallation\>;
       - checkEquipment(): void;
       - checkInstallation(): void;
       - checkDetails(): void;
@@ -280,10 +280,10 @@
   interface ISecurityReport {
     purpose: string;
     dateStart: string;
-    vulnerabilities: Array<string>;
+    vulnerabilities: Array\<string\>;
     dateEnd: string;
-    employees: Array<CEmployee>;
-    details: Array<string>;
+    employees: Array\<CEmployee\>;
+    details: Array\<string\>;
   }
 ```
 
@@ -293,7 +293,7 @@
     dateStart: string;
     progress: number;
     budget: number;
-    employees: Array<CEmployee>;
+    employees: Array\<CEmployee\>;
     profit: number;
   }
 ```
@@ -302,12 +302,12 @@
   interface IFinancialReport {
     dateStart: string;
     dateEnd: string;
-    depts: Array<string>;
+    depts: Array\<string\>;
     profit: number;
     wastage: number;
     bacon: number;
     budget: number;
-    comments: Array<string>;
+    comments: Array\<string\>;
   }
 ```
 
